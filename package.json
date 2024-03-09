@@ -4,9 +4,19 @@
   "description": "Commune Oracle Protocol",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    
-    "": ""
+    "dev": "yarn workspace commune-oracle-frontend dev",
+    "build": "yarn workspace commune-oracle-frontend build",
+    "export": "yarn workspace commune-oracle-frontend export",
+    "start": "yarn workspace commune-oracle-frontend start",
+    "chain": "yarn workspace commune-oracle-hardhat chain",
+    "deploy": "yarn workspace commune-oracle-hardhat deploy",
+    "compile": "yarn workspace commune-oracle-hardhat compile",
+    "test:contracts": "yarn workspace commune-oracle-hardhat test",
+    "test:frontend": "yarn workspace commune-oracle-frontend test",
+    "coverage:contracts": "yarn workspace commune-oracle-hardhat coverage",
+    "lint:frontend": "yarn workspace commune-oracle-frontend lint",
+    "format:frontend": "yarn workspace commune-oracle-frontend format",
+    "format:hardhat": "yarn workspace commune-oracle-hardhat format"
   },
   "repository": {
     "type": "git",
@@ -25,5 +35,15 @@
   "bugs": {
     "url": "https://github.com/Epitome1022/oracle-marketplace/issues"
   },
-  "homepage": "https://github.com/Epitome1022/oracle-marketplace#readme"
+  "homepage": "https://github.com/Epitome1022/oracle-marketplace#readme",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/oracle-hardhat",
+      "**/oracle-hardhat/**",
+      "**"
+    ]
+  }
 }
