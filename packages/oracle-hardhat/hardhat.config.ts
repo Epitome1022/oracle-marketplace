@@ -25,15 +25,19 @@ task('accounts', 'Prints the list of accounts', async (_args, hre) => {
 // Go to https://hardhat.org/config/ to learn more
 
 const GOERLI_RPC_URL =
-  process.env.GOERLI_RPC_URL || 'https://goerli.infura.io/v3/your-api-key'
+  process.env.GOERLI_RPC_URL || 'https://goerli.infura.io/v3/a27749044b104f099370a5b6c5ea2914'
 
 const SEPOLIA_RPC_URL =
-  process.env.SEPOLIA_RPC_URL || 'https://sepolia.infura.io/v3/your-api-key'
+  process.env.SEPOLIA_RPC_URL || 'https://sepolia.infura.io/v3/a27749044b104f099370a5b6c5ea2914'
+
+const MUMBAI_RPC_URL =
+  process.env.MUMBAI_RPC_URL || 'https://polygon-mumbai.infura.io/v3/a27749044b104f099370a5b6c5ea2914'
 
 const MNEMONIC = process.env.MNEMONIC || 'your mnemonic'
 const ETHERSCAN_API_KEY =
-  process.env.ETHERSCAN_API_KEY || 'Your etherscan API key'
-// const PRIVATE_KEY = process.env.PRIVATE_KEY || 'your private key'
+  process.env.ETHERSCAN_API_KEY || 'KBJB6EM7K4YK1HZ9MXTUB3T6XADADC8FGX'
+const PRIVATE_KEY = process.env.PRIVATE_KEY || '0xea72f1a3c53fce4690a6484cc4f6bf66fbe3088fd2590e7c97e177a0f8933e8a'
+
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -49,26 +53,35 @@ const config: HardhatUserConfig = {
     goerli: {
       chainId: 5,
       url: GOERLI_RPC_URL,
-      // accounts: [PRIVATE_KEY],
-      accounts: {
-        mnemonic: MNEMONIC,
-      },
+      accounts: [PRIVATE_KEY],
+      // accounts: {
+      //   mnemonic: MNEMONIC,
+      // },
       saveDeployments: true,
     },
     sepolia: {
       chainId: 11155111,
       url: SEPOLIA_RPC_URL,
-      // accounts: [PRIVATE_KEY],
-      accounts: {
-        mnemonic: MNEMONIC,
-      },
+      accounts: [PRIVATE_KEY],
+      // accounts: {
+      //   mnemonic: MNEMONIC,
+      // },
       saveDeployments: true,
     },
+    mumbai: {
+      chainId: 80001,
+      url: MUMBAI_RPC_URL,
+      accounts: [PRIVATE_KEY],
+    }
+
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: ETHERSCAN_API_KEY,
+    // apiKey: ETHERSCAN_API_KEY,
+    apiKey: {
+      polygonMumbai: 'P444IBQ8EJDNMDUH4QWANXT8K5USG9RX2S'
+    }
   },
   namedAccounts: {
     deployer: {
@@ -84,6 +97,9 @@ const config: HardhatUserConfig = {
   },
   solidity: {
     compilers: [
+      {
+        version: '0.8.20'
+      },
       {
         version: '0.8.6',
       },

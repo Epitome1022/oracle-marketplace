@@ -24,7 +24,7 @@ const func: DeployFunction = async function ({
   }
   const { vrfCallbackGasLimit } = networkConfig[chainId]
 
-  await deploy('RandomNumberConsumer', {
+  await deploy('CommuneRandomNumberConsumer', {
     from: deployer,
     args: [
       wrapperAddress,

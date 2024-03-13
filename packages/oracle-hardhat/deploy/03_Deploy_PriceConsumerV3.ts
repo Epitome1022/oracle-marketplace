@@ -19,7 +19,7 @@ const func: DeployFunction = async function ({
     ethUsdPriceFeedAddress = networkConfig[chainId].ethUsdPriceFeed as string
   }
 
-  await deploy('PriceConsumerV3', {
+  await deploy('CommunePriceConsumerV3', {
     from: deployer,
     args: [ethUsdPriceFeedAddress],
     log: true,

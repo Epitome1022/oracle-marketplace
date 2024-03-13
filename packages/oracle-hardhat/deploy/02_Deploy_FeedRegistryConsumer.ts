@@ -21,7 +21,7 @@ const func: DeployFunction = async function ({
 
   if (!feedRegistryAddress) return
 
-  await deploy('FeedRegistryConsumer', {
+  await deploy('CommuneFeedRegistryConsumer', {
     from: deployer,
     args: [feedRegistryAddress],
     log: true,

@@ -11,7 +11,7 @@ const func: DeployFunction = async function ({
   const chainId = await getChainId()
 
   if (chainId === '31337') {
-    await deploy('Multicall', { from: deployer })
+    await deploy('CommuneMulticall', { from: deployer })
   }
 }
 

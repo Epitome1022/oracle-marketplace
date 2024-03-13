@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Commune Oracle Protocol",
   "main": "index.js",
+  "private":true,
   "scripts": {
     "dev": "yarn workspace commune-oracle-frontend dev",
     "build": "yarn workspace commune-oracle-frontend build",
