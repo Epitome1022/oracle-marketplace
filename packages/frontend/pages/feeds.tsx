@@ -1,7 +1,7 @@
 import React from 'react'
 import { Code, Heading, HStack, Link, Text, SimpleGrid } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Section } from '../components/layout'
+import { OracleCard } from '../components/layout'
 import { SelectFeed, PriceFeed, ProofOfReserve } from '../components/feeds'
 
 function Feeds(): JSX.Element {
@@ -15,7 +15,7 @@ function Feeds(): JSX.Element {
         contracts.
       </Text>
       <SimpleGrid columns={3} spacing={10}>
-        <Section>
+        <OracleCard>
           <PriceFeed />
           <Text my="4">
             Consuming price feed by address via <Code>AggregatorV3Interface</Code>
@@ -35,8 +35,8 @@ function Feeds(): JSX.Element {
               Contract Addresses <ExternalLinkIcon mx="2px" />
             </Link>
           </HStack>
-        </Section>
-        <Section>
+        </OracleCard>
+        <OracleCard>
           <SelectFeed />
           <Text my="4">
             Feed Registry is an on-chain mapping of assets to feeds. It enables
@@ -46,8 +46,8 @@ function Feeds(): JSX.Element {
           <Link href="" isExternal>
             Usage <ExternalLinkIcon mx="2px" />
           </Link>
-        </Section>
-        <Section>
+        </OracleCard>
+        <OracleCard>
           <ProofOfReserve />
           <Text my="4">
             Proof of Reserve enables the reliable and timely monitoring of reserve
@@ -56,7 +56,7 @@ function Feeds(): JSX.Element {
           <Link href="" isExternal>
             Usage <ExternalLinkIcon mx="2px" />
           </Link>
-        </Section>
+        </OracleCard>
       </SimpleGrid>
       
     </>

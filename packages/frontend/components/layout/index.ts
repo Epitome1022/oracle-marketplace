@@ -1,3 +1,3 @@
 export { Layout } from './Layout'
 export { Head } from './Head'
-export { Section } from './Section'
+export { OracleCard } from './OracleCard'

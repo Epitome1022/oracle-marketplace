@@ -1,7 +1,7 @@
 import React from 'react'
 import { Heading, Text, Link } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Section } from '../components/layout'
+import { OracleCard } from '../components/layout'
 import { RandomNFT, RandomNumber } from '../components/vrf'
 
 function VRF(): JSX.Element {
@@ -14,7 +14,7 @@ function VRF(): JSX.Element {
         Use VRF (Verifiable Random Function) to consume randomness in your smart
         contracts.
       </Text>
-      <Section>
+      <OracleCard>
         <RandomNumber />
         <Text my="4">
           With every new request for randomness, Chainlink VRF generates a
@@ -28,8 +28,8 @@ function VRF(): JSX.Element {
         >
           Usage <ExternalLinkIcon mx="2px" />
         </Link>
-      </Section>
-      <Section>
+      </OracleCard>
+      <OracleCard>
         <RandomNFT />
         <Text my="4">
           100% on-chain generated NFT using VRF as randomness source. Each
@@ -38,7 +38,7 @@ function VRF(): JSX.Element {
         <Link href="" isExternal>
           Usage <ExternalLinkIcon mx="2px" />
         </Link>
-      </Section>
+      </OracleCard>
     </>
   )
 }

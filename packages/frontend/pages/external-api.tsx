@@ -2,7 +2,7 @@ import React from 'react'
 import { Heading, Text, Link } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { RequestBuilder } from '../components/api'
-import { Section } from '../components/layout'
+import { OracleCard } from '../components/layout'
 
 function ExternalAPI(): JSX.Element {
 
@@ -14,7 +14,7 @@ function ExternalAPI(): JSX.Element {
       <Text fontSize="xl">
         Request &amp; Receive data from any API in your smart contracts.
       </Text>
-      <Section>
+      <OracleCard>
         <RequestBuilder />
         <Text my="4">
           Retrieve data using any API via HTTP GET request, through
@@ -28,7 +28,7 @@ function ExternalAPI(): JSX.Element {
         >
           Usage <ExternalLinkIcon mx="2px" />
         </Link>
-      </Section>
+      </OracleCard>
     </>
   )
 }

@@ -1,10 +1,11 @@
 import NextLink from 'next/link'
-import { Heading, Text, Link } from '@chakra-ui/react'
+import { Heading, Text, Link, HStack, Image } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import { Section } from '../components/layout'
-import { SimpleGrid } from '@chakra-ui/react'
+import { OracleCard } from '../components/layout'
+import { SimpleGrid, Box } from '@chakra-ui/react'
 import { ColorModeScript } from '@chakra-ui/react'
 import theme from '../styles/theme'
+
 function HomeIndex(): JSX.Element {
   return (
     <>
@@ -15,8 +16,14 @@ function HomeIndex(): JSX.Element {
       <Text fontSize="xl">
         Oracle Protocol for CommuneAI on EVM
       </Text>
+      <Box borderRadius="lg" bg={'white'} mt={8} p={2}>
+        <HStack>
+          <Text fontSize='4xl' color={'black'}>CommuneAI Oracle Service Architecture</Text>
+          <Image src={'./images/diagram.jpg'}></Image>
+        </HStack>
+      </Box>
       <SimpleGrid columns={2} spacing={10}>
-        <Section>
+        <OracleCard>
           <Heading as="h2" size="md" mb="2">
             Blockchain Data Feeds
           </Heading>
@@ -28,8 +35,8 @@ function HomeIndex(): JSX.Element {
               Go to List <ArrowForwardIcon />
             </Link>
           </NextLink>
-        </Section>
-        {/* <Section>
+        </OracleCard>
+        {/* <OracleCard>
           <Heading as="h2" size="md" mb="2">
             Randomness (VRF)
           </Heading>
@@ -42,8 +49,8 @@ function HomeIndex(): JSX.Element {
               Go to List <ArrowForwardIcon />
             </Link>
           </NextLink>
-        </Section> */}
-        <Section>
+        </OracleCard> */}
+        <OracleCard>
           <Heading as="h2" size="md" mb="2">
             Third Party APIs
           </Heading>
@@ -55,8 +62,8 @@ function HomeIndex(): JSX.Element {
               Go to List <ArrowForwardIcon />
             </Link>
           </NextLink>
-        </Section>
-        {/* <Section>
+        </OracleCard>
+        {/* <OracleCard>
           <Heading as="h2" size="md" mb="2">
             Automation
           </Heading>
@@ -68,7 +75,7 @@ function HomeIndex(): JSX.Element {
               Go to List <ArrowForwardIcon />
             </Link>
           </NextLink>
-        </Section> */}
+        </OracleCard> */}
       </SimpleGrid>
       
     </>

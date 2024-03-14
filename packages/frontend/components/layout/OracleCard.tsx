@@ -1,11 +1,11 @@
 import React from 'react'
 import { Box, ColorModeScript, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import theme from '../../styles/theme'
-interface SectionProps {
+interface OracleCardProps {
   children: React.ReactNode
 }
 
-export const Section = (props: SectionProps): JSX.Element => {
+export const OracleCard = (props: OracleCardProps): JSX.Element => {
   const bg = useColorModeValue('gray.100', 'yellow.900')
   return (
     <>

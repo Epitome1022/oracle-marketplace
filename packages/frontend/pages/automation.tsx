@@ -1,6 +1,6 @@
 import { Heading, Text, Link } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Section } from '../components/layout'
+import { OracleCard } from '../components/layout'
 
 function HomeIndex(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ function HomeIndex(): JSX.Element {
       <Text fontSize="xl">
         Reliably execute smart contract functions using a variety of triggers.
       </Text>
-      <Section>
+      <OracleCard>
         <Heading as="h2" size="md" mb="2">
           Batch NFT Demo App
         </Heading>
@@ -22,7 +22,7 @@ function HomeIndex(): JSX.Element {
         <Link href="https://automation.chainlink-demo.app" isExternal>
           Go to Demo <ExternalLinkIcon mx="2px" />
         </Link>
-      </Section>
+      </OracleCard>
     </>
   )
 }
