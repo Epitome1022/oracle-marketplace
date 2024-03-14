@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, ColorModeScript, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 import theme from '../../styles/theme'
 interface OracleCardProps {
   children: React.ReactNode
