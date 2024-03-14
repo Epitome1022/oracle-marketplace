@@ -30,9 +30,9 @@ const func: DeployFunction = async function ({
   }
 
   // Try Auto-fund RandomNumberConsumer contract
-  const RandomNumberConsumer = await deployments.get('CommuneRandomNumberConsumer')
+  const RandomNumberConsumer = await deployments.get('RandomNumberConsumer')
   const randomNumberConsumer = await ethers.getContractAt(
-    'CommuneRandomNumberConsumer',
+    'RandomNumberConsumer',
     RandomNumberConsumer.address
   )
   if (
@@ -49,9 +49,9 @@ const func: DeployFunction = async function ({
   }
 
   // Try Auto-fund APIConsumer contract with LINK
-  const APIConsumer = await deployments.get('CommuneAPIConsumer')
+  const APIConsumer = await deployments.get('APIConsumer')
   const apiConsumer = await ethers.getContractAt(
-    'CommuneAPIConsumer',
+    'APIConsumer',
     APIConsumer.address
   )
   if (await autoFundCheck(apiConsumer.address, chainId, linkTokenAddress)) {

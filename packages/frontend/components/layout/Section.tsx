@@ -6,11 +6,12 @@ interface SectionProps {
 }
 
 export const Section = (props: SectionProps): JSX.Element => {
-  const bg = useColorModeValue('gray.100', 'orange.300')
+  const bg = useColorModeValue('gray.100', 'yellow.900')
   return (
     <>
       {/* <ColorModeScript initialColorMode={theme.config.initialColorMode} /> */}
-      <Box maxWidth="container.sm" p="8" mt="8" bg={bg} {...props}></Box>
+      <Box 
+            boxShadow='dark-lg' borderWidth='1px' borderRadius='lg' maxWidth="container.sm" p="8" mt="8" bg={bg} {...props}></Box>
     </>
   )
 }

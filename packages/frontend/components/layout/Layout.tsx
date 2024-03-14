@@ -83,7 +83,7 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       <Head customMeta={customMeta} />
       <header>
-        <Container maxWidth="container.xl">
+        <Container maxWidth="100%" boxShadow='2xl' mb={8} pl={32} pr={32} pe={0} ps={0}>
           <SimpleGrid
             columns={[1, 1, 1, 2]}
             alignItems="center"
@@ -91,28 +91,29 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
             py="8"
           >
             <Flex py={[4, null, null, 0]}>
+              <Image src='./images/cubes.gif' w={32} h={20}></Image>
               <NextLink href="/" passHref>
-                <Link px="4" py="1">
+                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
                   Home
                 </Link>
               </NextLink>
               <NextLink href="/feeds" passHref>
-                <Link px="4" py="1">
+                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
                   Blockchain Data Feeds
                 </Link>
               </NextLink>
               {/* <NextLink href="/vrf" passHref>
-                <Link px="4" py="1">
+                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
                   Randomness
                 </Link>
               </NextLink> */}
               <NextLink href="/external-api" passHref>
-                <Link px="4" py="1">
+                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
                   Third Party APIs
                 </Link>
               </NextLink>
               {/* <NextLink href="/automation" passHref>
-                <Link px="4" py="1">
+                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
                   Automation
                 </Link>
               </NextLink> */}
@@ -147,7 +148,7 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
         </Container>
       </header>
       <main>
-        <Container maxWidth="container.xl">
+        <Container maxWidth="container.xl" minH={500}>
           {error && <Error message={getErrorMessage(error)} />}
           {children}
           {notifications.map((notification) => {

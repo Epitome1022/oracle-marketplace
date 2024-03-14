@@ -17,10 +17,13 @@ import { getRequestStatus, getContractError } from '../../lib/utils'
 // @ts-ignore
 import { APIConsumer } from 'types/typechain'
 
-const DEFAULT_MULTIPLIER = '1000000000000000000'
+const DEFAULT_MULTIPLIER = '10'
 const DEFAULT_URL =
-  'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD'
-const DEFAULT_PATH = 'RAW,ETH,USD,VOLUME24HOUR'
+  ''
+const DEFAULT_PATH = ''
+// const DEFAULT_URL =
+//   'https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD'
+// const DEFAULT_PATH = 'RAW,ETH,USD,VOLUME24HOUR'
 const URL_REGEX =
   /^(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/
 const PATH_REGEX = /^[a-zA-Z_][\w]*(?:,[\w]+)*$/
@@ -92,7 +95,7 @@ export function RequestBuilder(): JSX.Element {
     <>
       {hasError && <Error message={getContractError(state.errorMessage)} />}
       <FormControl isInvalid={isInvalidUrl}>
-        <FormLabel htmlFor="url">Data Source</FormLabel>
+        <FormLabel htmlFor="url">Third Party Url</FormLabel>
         <Tooltip
           label="Set the URL to perform the GET request on"
           placement="right-start"
@@ -103,7 +106,7 @@ export function RequestBuilder(): JSX.Element {
             value={url}
             placeholder="Enter API URL..."
             id="url"
-            bgColor="white"
+            bgColor="black"
             onChange={(event) => setURL(event.target.value)}
           />
         </Tooltip>
@@ -111,7 +114,7 @@ export function RequestBuilder(): JSX.Element {
       </FormControl>
 
       <FormControl mt="4" isInvalid={isInvalidPath}>
-        <FormLabel htmlFor="path">Path to Number</FormLabel>
+        <FormLabel htmlFor="path">JSON Key Path</FormLabel>
         <Tooltip
           label="Set dot separated path to find the desired data in the API response"
           placement="right-start"
@@ -122,7 +125,7 @@ export function RequestBuilder(): JSX.Element {
             value={path}
             placeholder="Enter Path..."
             id="path"
-            bgColor="white"
+            bgColor="black"
             onChange={(event) => setPath(event.target.value)}
           />
         </Tooltip>
@@ -143,7 +146,7 @@ export function RequestBuilder(): JSX.Element {
           <Input
             value={multiplier}
             placeholder="Enter Multiplier..."
-            bgColor="white"
+            bgColor="black"
             onChange={(event) => setMultiplier(event.target.value)}
           />
         </Tooltip>
@@ -160,7 +163,7 @@ export function RequestBuilder(): JSX.Element {
         colorScheme="teal"
         disabled={isInvalid || isLoading || !account || !!error}
       >
-        Custom API Request
+        Send Request
       </Button>
       {data && (
         <Text fontSize="xl" mt="4">

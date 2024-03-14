@@ -17,16 +17,16 @@ function ExternalAPI(): JSX.Element {
       <Section>
         <RequestBuilder />
         <Text my="4">
-          Consume data from any API via HTTP GET request, through
-          Chainlink&apos;s decentralized oracle network. It provides smart
+          Retrieve data using any API via HTTP GET request, through
+          CommuneAI&apos;s decentralized oracle network. It provides smart
           contracts with the ability to push and pull data, facilitating the
           interoperability between on-chain and off-chain applications.
         </Text>
         <Link
-          href="https://docs.chain.link/docs/make-a-http-get-request/"
+          href=""
           isExternal
         >
-          Learn More <ExternalLinkIcon mx="2px" />
+          Usage <ExternalLinkIcon mx="2px" />
         </Link>
       </Section>
     </>

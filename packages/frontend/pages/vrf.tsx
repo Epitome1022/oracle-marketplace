@@ -23,10 +23,10 @@ function VRF(): JSX.Element {
           compromising on security or usability.
         </Text>
         <Link
-          href="https://docs.chain.link/docs/get-a-random-number"
+          href=""
           isExternal
         >
-          Learn More <ExternalLinkIcon mx="2px" />
+          Usage <ExternalLinkIcon mx="2px" />
         </Link>
       </Section>
       <Section>
@@ -35,8 +35,8 @@ function VRF(): JSX.Element {
           100% on-chain generated NFT using VRF as randomness source. Each
           request creates and stores an unique Scalable Vector Graphic (SVG).
         </Text>
-        <Link href="https://chain.link/education/nfts" isExternal>
-          Learn More <ExternalLinkIcon mx="2px" />
+        <Link href="" isExternal>
+          Usage <ExternalLinkIcon mx="2px" />
         </Link>
       </Section>
     </>
