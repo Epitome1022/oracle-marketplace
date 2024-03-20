@@ -16,7 +16,8 @@ import {
   MenuItem,
   MenuList,
   SimpleGrid,
-  
+  AbsoluteCenter,
+  Spacer
 } from '@chakra-ui/react'
 import { useEthers, useNotifications } from '@usedapp/core'
 import blockies from 'blockies-ts'
@@ -83,69 +84,78 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
     <>
       <Head customMeta={customMeta} />
       <header>
-        <Container maxWidth="100%" boxShadow='2xl' mb={8} pl={32} pr={32} pe={0} ps={0}>
-          <SimpleGrid
-            columns={[1, 1, 1, 2]}
-            alignItems="center"
-            justifyContent="space-between"
-            py="8"
-          >
-            <Flex py={[4, null, null, 0]}>
-              <Image src='./images/cubes.gif' w={32} h={20}></Image>
-              <NextLink href="/" passHref>
-                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
-                  Home
-                </Link>
-              </NextLink>
-              <NextLink href="/feeds" passHref>
-                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
-                  Blockchain Data Feeds
-                </Link>
-              </NextLink>
-              {/* <NextLink href="/vrf" passHref>
-                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
-                  Randomness
-                </Link>
-              </NextLink> */}
-              <NextLink href="/external-api" passHref>
-                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
-                  Third Party APIs
-                </Link>
-              </NextLink>
-              {/* <NextLink href="/automation" passHref>
-                <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
-                  Automation
-                </Link>
-              </NextLink> */}
-            </Flex>
-            {account ? (
-              <Flex
-                order={[-1, null, null, 2]}
-                alignItems={'center'}
-                justifyContent={['flex-start', null, null, 'flex-end']}
-              >
-                <Balance />
-                <Image ml="4" src={blockieImageSrc} alt="blockie" />
-                <Menu placement="bottom-end">
-                  <MenuButton as={Button} ml="4">
-                    {truncateHash(account)}
-                  </MenuButton>
-                  <MenuList>
-                    <MenuItem
-                      onClick={() => {
-                        deactivate()
-                      }}
-                    >
-                      Disconnect
-                    </MenuItem>
-                  </MenuList>
-                </Menu>
+        <Box maxWidth="full" boxShadow='2xl' mb={8} pl={8} pr={8}>
+          <HStack>
+            <Image src='./images/cubes.gif' w={32} h={20}></Image>
+            {/* <SimpleGrid
+              columns={[1, 1, 1, 2]}
+              alignItems="center"
+              justifyContent="space-between"
+            > */}
+              <Flex py={[4, null, null, 0]}>
+                
+                <NextLink href="/" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Home
+                  </Link>
+                  
+                </NextLink>
+                <NextLink href="/feeds" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Blockchain Data Feeds
+                  </Link>
+                </NextLink>
+                {/* <NextLink href="/vrf" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Randomness
+                  </Link>
+                </NextLink> */}
+                <NextLink href="/external-api" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Third Party APIs
+                  </Link>
+                </NextLink>
+                <NextLink href="/documentation" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Docs
+                  </Link>
+                </NextLink>
+                {/* <NextLink href="/automation" passHref>
+                  <Link px="4" py="1" _hover={{ color: 'blue.500' }}>
+                    Automation
+                  </Link>
+                </NextLink> */}
               </Flex>
-            ) : (
-              <ConnectWallet />
-            )}
-          </SimpleGrid>
-        </Container>
+              <Spacer></Spacer>
+              {account ? (
+                <Flex
+                  order={[-1, null, null, 2]}
+                  alignItems={'center'}
+                  justifyContent={['flex-start', null, null, 'flex-end']}
+                >
+                  <Balance />
+                  <Image ml="4" src={blockieImageSrc} alt="blockie" />
+                  <Menu placement="bottom-end">
+                    <MenuButton as={Button} ml="4">
+                      {truncateHash(account)}
+                    </MenuButton>
+                    <MenuList>
+                      <MenuItem
+                        onClick={() => {
+                          deactivate()
+                        }}
+                      >
+                        Disconnect
+                      </MenuItem>
+                    </MenuList>
+                  </Menu>
+                </Flex>
+              ) : (
+                <ConnectWallet />
+              )}
+            {/* </SimpleGrid> */}
+          </HStack>
+        </Box>
       </header>
       <main>
         <Container maxWidth="container.xl" minH={500}>
@@ -188,6 +198,8 @@ export const Layout = ({ children, customMeta }: LayoutProps): JSX.Element => {
             <HStack>
               <Image src="images/github.svg" width="20px" />
               <Text>GitHub Repo</Text>
+              <Spacer></Spacer>
+              <Text>copyright@2024 communeai.org All rights reserved.</Text>
             </HStack>
           </Link>
         </Container>
